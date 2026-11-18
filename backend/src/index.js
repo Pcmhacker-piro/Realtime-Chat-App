@@ -8,9 +8,11 @@ import {connectDB} from "../lib/db.js"
 import authRoutes from "../routes/auth.route.js"
 import messageRoutes from "../routes/message.route.js"
 import { server ,app } from "../lib/socket.js";
-import path from "path";
+import path from "path";    
+
 import { jwt } from "jsonwebtoken";
-import { TokenExpiredError } from "jwt";
+
+const { TokenExpiredError }  =  jwt;
 
 const port = process.env.PORT;
 
