@@ -116,8 +116,8 @@ export const updateProfile = async (req,res) =>{
         const updateUser = await User.findByIdAndUpdate(userId,{profilePic : uploadResonse.secure_url},{new:true});
         return res.status(200).json({message : "profile pic updated successfully",updateUser})
     }catch(error){
-        console.log("error",error.message);
-        return res.status(500).json({message : "Internal Server Error"})
+        console.log("error in updateProfile controller:", error);
+        return res.status(500).json({ message: error.message || "Internal Server Error" })
     }
     
 }
@@ -126,8 +126,8 @@ export const checkAuth = (req,res) =>{
     try{
         return res.status(200).json({message : "Authonticated",user : req.user});
     }catch(error){
-        console.log("error",error.message);
-        return res.status(500).json({message : "Internal Server Error"})
+        console.log("error in updateProfile controller:", error);
+        return res.status(500).json({ message: error.message || "Internal Server Error" })
     }
 
 }
