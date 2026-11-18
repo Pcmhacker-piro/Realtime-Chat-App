@@ -9,7 +9,8 @@ import authRoutes from "../routes/auth.route.js"
 import messageRoutes from "../routes/message.route.js"
 import { server ,app } from "../lib/socket.js";
 import path from "path";
-import { TokenExpiredError } from "jsonwebtoken";
+import { jwt } from "jsonwebtoken";
+import { TokenExpiredError } from "jwt";
 
 const port = process.env.PORT;
 
