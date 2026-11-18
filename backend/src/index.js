@@ -10,7 +10,7 @@ import messageRoutes from "../routes/message.route.js"
 import { server ,app } from "../lib/socket.js";
 import path from "path";    
 
-import { jwt } from "jsonwebtoken";
+import  jwt  from "jsonwebtoken";//here jsonwebtoken is an commonjs moduel we are importing this via es module thats
 
 const { TokenExpiredError }  =  jwt;
 
